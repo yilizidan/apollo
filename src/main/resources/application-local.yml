@@ -11,7 +11,7 @@ spring:
     druid:
       url: jdbc:mysql://127.0.0.1:3306/apollo?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
       username: root
-      password: _Green_521388
+      password: root
       # 配置DruidStatViewServlet
       stat-view-servlet:
         # IP白名单(没有配置或者为空，则允许所有访问)
