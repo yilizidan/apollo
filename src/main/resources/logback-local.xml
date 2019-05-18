@@ -141,12 +141,6 @@
         </triggeringPolicy>
     </appender>
 
-    <logger name="org.apollo.blog.aspect.WebLogAspect" level="ERROR">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="OTHERERROR"/>
-        <appender-ref ref="OTHERINFO"/>
-    </logger>
-
     <logger name="org.apollo.blog.controller" level="DEBUG">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="OTHERERROR"/>

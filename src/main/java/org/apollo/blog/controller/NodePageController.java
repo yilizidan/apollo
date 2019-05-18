@@ -161,45 +161,6 @@ public class NodePageController {
 		return "nodeLinkManage";
 	}
 
-	/**
-	 * 服务配置
-	 */
-	@ApiOperation(value = "服务配置")
-	@GetMapping({"/schedulejob"})
-	public String scheduleJob() {
-		return "schedulejob";
-	}
-
-	/**
-	 * bilibili
-	 */
-	@ApiOperation(value = "bilibili")
-	@GetMapping({"/bilibili"})
-	public String bilibili() {
-		return "bilibili";
-	}
-
-	/**
-	 * bilibili完结动漫详情
-	 */
-	@ApiOperation(value = "bilibili完结动漫详情")
-	@GetMapping({"/bilibiliBeOverDetails"})
-	public String bilibiliBeOverDetails() {
-		return "bilibilidetails";
-	}
-
-	@ApiOperation(value = "国漫番剧")
-	@GetMapping({"/bilibiliByChina"})
-	public String bilibiliByChina() {
-		return "ChinaAnime";
-	}
-
-	@ApiOperation(value = "日漫番剧")
-	@GetMapping({"/bilibiliByJapan"})
-	public String bilibiliByJapan() {
-		return "JapanAnime";
-	}
-
 	@Resource
 	private RedisTemplate<String, Object> redisTemplate;
 	@Resource

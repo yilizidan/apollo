@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.subject.Subject;
@@ -34,6 +35,7 @@ public class PersonalController {
 
     @ApiOperation(value = "获取个人信息")
     @PostMapping({"/init/personalinfo"})
+    @RequiresAuthentication
     public ApiResult<PersonalInfoVO> personalinfo() {
         Subject subject = SecurityUtils.getSubject();
         User user = (User) subject.getPrincipal();

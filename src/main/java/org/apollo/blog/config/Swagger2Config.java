@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * http://127.0.0.1:8456/laplace/swagger-ui.html#/访问swagger2
+ * http://127.0.0.1:8754/apollo/swagger-ui.html#/访问swagger2
  *
  * @author Order
  * @date 2018/8/21 16:06:21
