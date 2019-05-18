@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/2005/Atom">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>通用科技</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link href="css/ui/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/ui/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="css/ui/animate.css" rel="stylesheet">
+    <link href="css/ui/style.css?v=4.1.0" rel="stylesheet">
+    <link href="css/ui/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <!-- Sweet alert -->
+    <link href="css/ui/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+    <script>if (window.top !== window.self) {
+        window.top.location = window.location;
+    }</script>
+</head>
+
+<body class="gray-bg">
+
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+        <div style="height: 150px;">
+            <div class="head" style="position: absolute;left: 28%;">
+                <div style="border-radius: 50%;-webkit-border-radius: 50%;-o-border-radius: 50%;-moz-border-radius: 50%;border: 6px solid rgba(221,218,215,0.23);width: 132px;height: 132px;font-size: 120px;"
+                     class="fa fa-user-circle"></div>
+            </div>
+        </div>
+        <h3>欢迎使用通用科技</h3>
+        <form class="m-t" method="post">
+            <div class="form-group">
+                <span class="fa fa-user-circle-o fa-2x" style="line-height: 50px;left: 20px;position: absolute;"></span>
+                <input type="text" class="form-control" style="height: 50px;padding-left: 60px;" name="username"
+                       placeholder="电子邮箱" required="">
+            </div>
+            <div class="form-group">
+                <span class="fa fa-unlock-alt fa-2x" style="line-height: 50px;left: 20px;position: absolute;"></span>
+                <input type="password" class="form-control" style="height: 50px;padding-left: 60px;" name="password"
+                       placeholder="密码"
+                       required="">
+            </div>
+            <div style="float: left;">
+                <label><input type="checkbox" name="rememberMe" class="i-checks">记住密码</label>
+            </div>
+            <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+
+            <p class="text-muted text-center">
+                <a th:href="@{'/forgetpassword'}">
+                    <span>忘记密码了？</span>
+                </a> | <a th:href="@{'/registered'}">注册一个新账号</a>
+            </p>
+
+        </form>
+    </div>
+</div>
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/ui/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/jquery1.12.0.min.js"></script>
+<script src="js/jquery.cookie.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/base64.min.js"></script>
+<!-- Sweet alert -->
+<script src="js/ui/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- RSA -->
+<script src="js/jsencrypt.min.js"></script>
+
+<!-- iCheck -->
+<script src="js/ui/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green'
+        });
+    });
+</script>
+
+<script src="js/public.min.js"></script>
+<script src="js/spinners.min.js"></script>
+<script src="js/ajax_me.js"></script>
+<script src="js/login.min.js"></script>
+
+</body>
+
+</html>

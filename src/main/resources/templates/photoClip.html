@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/2005/Atom" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title th:text="#{index.head}"></title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="css/ui/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/ui/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/ui/animate.css" rel="stylesheet">
+    <link href="css/ui/style.css?v=4.1.0" rel="stylesheet">
+    <link href="business/css/photoClip.min.css" rel="stylesheet"/>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight" id="photoclip">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title  back-change">
+                    <h5>剪切头像</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="clipArea">
+                                <div class="photo-clip-view">
+                                    <div class="photo-clip-moveLayer">
+                                        <div class="photo-clip-rotateLayer"></div>
+                                    </div>
+                                </div>
+                                <div class="photo-clip-mask">
+                                    <div class="photo-clip-mask-left"></div>
+                                    <div class="photo-clip-mask-right"></div>
+                                    <div class="photo-clip-mask-top"></div>
+                                    <div class="photo-clip-mask-bottom"></div>
+                                    <div class="photo-clip-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>图片预览：</h4>
+                            <div id="view"></div>
+                            <h4>说明：</h4>
+                            <p>
+                                你可以选择新图片上传，然后下载裁剪后的图片
+                            </p>
+                            <div class="btn-group">
+                                <label title="加载图片" for="file" class="btn btn-primary">
+                                    <input type="file" accept="image/*" name="file" id="file" class="hide"> 加载图片
+                                </label>
+                                <label id="clipBtn" title="裁剪图片" class="btn btn-white">裁剪</label>
+                                <label title="上传图片" class="btn btn-white" @click.stop="savePhoto($event)">上传</label>
+                            </div>
+                            <h4>其他说明：</h4>
+                            <p>
+                                <code>PhotoClip</code>头像修改成功后！请刷新主页。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/jquery1.12.0.min.js"></script>
+<script src="js/jquery.cookie.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/ui/bootstrap.min.js?v=3.3.6"></script>
+<!-- Sweet alert -->
+<script src="js/ui/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- 自定义js -->
+<script src="js/ui/content.js?v=1.0.0"></script>
+<script src="js/public.min.js"></script>
+<script src="js/spinners.min.js"></script>
+<script src="js/ajax_me.js"></script>
+
+<script src="js/jietu/iscroll-zoom.js"></script>
+<script src="js/jietu/hammer.min.js"></script>
+<script src="js/jietu/lrz.all.bundle.js"></script>
+<script src="js/jietu/jquery.photoClip.js"></script>
+<script src="business/js/photoClip.js"></script>
+</body>
+</html>

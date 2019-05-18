@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/2005/Atom" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title th:text="#{index.head}"></title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="css/ui/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/ui/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/ui/animate.css" rel="stylesheet">
+    <link href="css/ui/style.css?v=4.1.0" rel="stylesheet">
+    <link href="css/nodemanage.min.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content  animated fadeInRight" style="height: 100%;" id="nodeManager">
+    <div class="row" style="height: 100%;">
+        <div class="col-sm-3" style="padding-left: 0px;height: 100%;">
+            <div style="min-height: 40px;background: #2f4050;">
+                <div style="padding: 10px 0 10px 20px;">
+                    <div @click.stop="refreshClick($event)" class="btn btn-default fa">
+                        <a href="javascript:void(0);" :class="refreshTips"></a>
+                        <span>刷新</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lefttoggle" style="height: 100%;min-height: 800px;">
+                <ul class="list classset-table">
+                    <li>
+                        <div :class="topclass" @click.stop="divIClick($event)" v-cloak>
+                            <i :class="faclass" @click.stop="faClick($event)" v-cloak></i>
+                            <p>人员列表</p>
+                        </div>
+                        <ul class="two classset-table sortable termsettable ui-sortable" v-show="treeShow">
+                            <li v-for="(item,index) in personList" v-cloak>
+                                <div :class="item.boxclass" @click.stop="itemClick($event,index)" v-cloak>
+                                    <i class="fa fa-user"></i>
+                                    <p v-text="item.nickname+'('+item.username+')'" v-cloak></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>节点权限</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="dd" id="nestable2">
+                        <ol class="dd-list">
+                            <li v-for="(item,index) in nodeData" class="dd-item dd-nodrag dd-collapsed"
+                                :data-id="item.nodeid">
+                                <button data-action="collapse" type="button" style="display: none;"
+                                        v-if="item.childlist&&item.childlist.length>0">关闭
+                                </button>
+                                <button type="button" style="display: block;height: 34px;width: 33px;color: #f3f3f4;"
+                                        v-else="" disabled="disabled"></button>
+                                <button data-action="expand" type="button" style="display: block;"
+                                        v-if="item.childlist&&item.childlist.length>0">展开
+                                </button>
+                                <div class="dd-handle">
+                                    <span class="pull-right" v-text="item.descripte"></span>
+                                    <div :class="item.checkclass" @click.stop="checkClick($event,index,1)"></div>
+                                    <span class="label label-info"><i :class="item.nodeicon"></i></span>
+                                    <strong v-text="item.nodename"></strong>
+                                </div>
+                                <ol class="dd-list">
+                                    <li v-for="(item1,index1) in item.childlist" class="dd-item dd-nodrag"
+                                        :data-id="item1.nodeid">
+                                        <button type="button"
+                                                style="display: block;height: 34px;width: 33px;color: #f3f3f4;"
+                                                disabled="disabled"></button>
+                                        <div class="dd-handle">
+                                            <span class="pull-right" v-text="item1.descripte"></span>
+                                            <div :class="item1.checkclass"
+                                                 @click.stop="checkClick($event,index,2,index1)"></div>
+                                            <span class="label label-info"><i :class="item1.nodeicon"></i></span>
+                                            <strong v-text="item1.nodename"></strong>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <button type="button" v-show="edit" class="btn btn-primary" @click.stop="saveClick($event)">保存</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/jquery1.12.0.min.js"></script>
+<script src="js/jquery.cookie.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/ui/bootstrap.min.js?v=3.3.6"></script>
+<!-- Sweet alert -->
+<script src="js/ui/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- 自定义js -->
+<script src="js/ui/content.js?v=1.0.0"></script>
+<!-- Nestable List -->
+<script src="js/ui/plugins/nestable/jquery.nestable.js"></script>
+
+<script src="js/public.min.js"></script>
+<script src="js/spinners.min.js"></script>
+<script src="js/ajax_me.js"></script>
+<script src="js/blogmanage/nodemanage.js"></script>
+
+</body>
+
+</html>

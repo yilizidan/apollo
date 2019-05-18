@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.apollo.blog.mapper.RzMapper">
+
+    <select id="lastWeeknop" resultType="java.lang.Integer" parameterType="java.lang.String">
+      SELECT COUNT(DISTINCT userid) AS nop FROM t_rz WHERE FROM_UNIXTIME(login_time/1000,'%Y-%m-%d')=#{time}
+    </select>
+
+    <select id="lastWeekpt" resultType="java.lang.Integer" parameterType="java.lang.String">
+      SELECT COUNT(userid) AS pt FROM t_rz WHERE FROM_UNIXTIME(login_time/1000,'%Y-%m-%d')=#{time}
+    </select>
+
+</mapper>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/2005/Atom">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>通用科技</title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="css/ui/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/ui/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- Morris -->
+    <link href="css/ui/plugins/morris/morris.css" rel="stylesheet">
+
+    <link href="css/ui/animate.css" rel="stylesheet">
+    <link href="css/ui/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg sidebar-content">
+
+<div class="wrapper wrapper-content animated fadeInRight" id="portal_vue">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>访问统计(一周)
+                        <small>折线图</small>
+                    </h5>
+                    <div class="ibox-tools" @click.stop="iboxClick($event,0)">
+                        <a class="dropdown-toggle">
+                            <i :class="chart_visitors"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" style="position: relative">
+                    <div id="morris-area-chart-number-visitors" style="max-height: 280px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>访问统计(一月)
+                        <small>折线图</small>
+                    </h5>
+                    <div class="ibox-tools" @click.stop="iboxClick($event,1)">
+                        <a class="dropdown-toggle">
+                            <i :class="chart_visits"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" style="position: relative">
+                    <div id="morris-area-chart-visits" style="max-height: 280px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>访问统计(一周)
+                        <small>面积图</small>
+                    </h5>
+                    <div class="ibox-tools" @click.stop="iboxClick($event,0)">
+                        <a class="dropdown-toggle">
+                            <i :class="chart_visitors"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" style="position: relative">
+                    <div id="area-morris-chart-number-visitors" style="max-height: 280px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>访问统计(一月)
+                        <small>面积图</small>
+                    </h5>
+                    <div class="ibox-tools" @click.stop="iboxClick($event,1)">
+                        <a class="dropdown-toggle">
+                            <i :class="chart_visits"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" style="position: relative">
+                    <div id="area-morris-chart-visits" style="max-height: 280px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/jquery1.12.0.min.js"></script>
+<script src="js/jquery.cookie.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/base64.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/ui/bootstrap.min.js?v=3.3.6"></script>
+<!-- Sweet alert -->
+<script src="js/ui/plugins/sweetalert/sweetalert.min.js"></script>
+
+<!-- 自定义js -->
+<script src="js/public.min.js"></script>
+<script src="js/spinners.min.js"></script>
+<script src="js/ajax_me.js"></script>
+
+<!-- 自定义js -->
+<script src="js/ui/content.js?v=1.0.0"></script>
+
+<!-- Morris -->
+<script src="js/ui/plugins/morris/raphael-min.js"></script>
+<script src="js/ui/plugins/morris/morris.min.js"></script>
+
+<script src="js/portal.js"></script>
+
+</body>
+
+</html>

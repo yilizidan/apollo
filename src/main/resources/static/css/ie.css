@@ -1,0 +1,9 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #3cbbdc url(../images/browser.png) no-repeat center center;
+}
